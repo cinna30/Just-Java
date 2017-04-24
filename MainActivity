@@ -1,10 +1,11 @@
-package com.example.android.justjava;
-
+package com.example.cinna.justjava;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.cinna.justjava.R;
 
 import java.text.NumberFormat;
 
@@ -48,8 +49,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         int price = calculatePrice();
-        String priceMessage = "Total: $" + price;
-        priceMessage = priceMessage + "\nThank you";
+        String priceMessage = createOrderSummary(price);
         displayMessage(priceMessage);
     }
 
@@ -66,8 +66,12 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Shows the order summmary.
      */
-    private void createOrderSummary()  {
-
+    private String createOrderSummary(int price)  {
+        String priceMessage = "Kaptain Kunal";
+        priceMessage += "\nQunatity:" + quantity;
+        priceMessage += "\nTotal: $" + price;
+        priceMessage += "\nThank you!";
+        return priceMessage;
     }
 
     /**
